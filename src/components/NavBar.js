@@ -30,7 +30,7 @@ const NavBar = ({
   const { translations } = useLanguage()
 
   return (
-    <AppBar position='relative' className={classNames(classes.root, {
+    <AppBar position='relative' color='transparent' className={classNames(classes.root, {
       [classes.hideOnMobile]: isDrawerOpen,
     })}>
       <Toolbar className={classes.logo}>

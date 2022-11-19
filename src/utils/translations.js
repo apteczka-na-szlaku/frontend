@@ -8,7 +8,7 @@ export default {
     save: 'Zapisz',
     cancel: 'Anuluj',
     loading: 'Ładowanie',
-    search: 'Przeszukaj Wiating',
+    search: 'Szukaj',
     backToResults: 'Powrót do wyników',
     locationInfo: {
       description: 'Opis',
