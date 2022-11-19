@@ -49,9 +49,9 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     margin: 0,
     width: 'auto',
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.black, 0.15),
     '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.black, 0.25),
     },
     '& fieldset': {
       border: 'none',
@@ -60,23 +60,14 @@ const useStyles = makeStyles(theme => ({
   icon: {
     color: 'white',
     height: '100%',
-    // position: 'absolute',
-    // pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    // width: theme.spacing(5),
-    // [theme.breakpoints.up('sm')]: {
-    //   width: theme.spacing(7),
-    // },
   },
   input: {
-    color: 'white',
-    // padding: theme.spacing(1),
     paddingLeft: theme.spacing(1),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      // paddingLeft: theme.spacing(7),
       width: 200,
     },
   },

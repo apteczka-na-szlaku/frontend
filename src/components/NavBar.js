@@ -33,7 +33,7 @@ const NavBar = ({
     <AppBar position='relative' className={classNames(classes.root, {
       [classes.hideOnMobile]: isDrawerOpen,
     })}>
-      <Toolbar>
+      <Toolbar className={classes.logo}>
         <Logo className={classes.logo} />
         <Form
           fields={['phrase']}
@@ -87,6 +87,7 @@ const NavBar = ({
 const useStyles = makeStyles(theme => ({
   root: {
     zIndex: theme.zIndex.drawer + 1,
+    backgroundColor: 'white',
   },
   hideOnMobile: {
     [theme.breakpoints.down('xs')]: {
