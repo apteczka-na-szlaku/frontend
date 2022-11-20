@@ -27,7 +27,7 @@ const LocationInfo = ({
   const [reportIsOpen, setReportIsOpen] = React.useState()
   const updatedAt = selectedLocation.last_modified_timestamp || selectedLocation.created_timestamp
   const type = locationTypes[selectedLocation.type]
-  const typeLabel = selectedLocation.type ? translations.locationType[type.label] : ''
+  const typeLabel = (selectedLocation.type && type) ? translations.locationType[type.label] : '???'
   const roundedLat = roundLatLng(selectedLocation.location.lat)
   const roundedLng = roundLatLng(selectedLocation.location.lng)
 
