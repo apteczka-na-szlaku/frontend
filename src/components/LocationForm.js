@@ -13,6 +13,7 @@ import ConfirmDelete from './ConfirmDelete'
 import locationTypes from '../utils/locationTypes'
 import generateMarkerIcon from '../utils/generateMarkerIcon'
 import useLanguage from '../utils/useLanguage'
+import { locationToString } from '../utils/helpers'
 
 
 const LocationForm = ({
@@ -26,11 +27,6 @@ const LocationForm = ({
 }) => {
   const [loading, setLoading] = React.useState()
   const { translations } = useLanguage()
-
-  const locationToString = () => {
-    const { lat, lng } = locationData.location
-    return [lat, lng].toString().replace(',', ', ')
-  }
 
   return <>
     <Typography variant='h4' gutterBottom>
@@ -68,7 +64,7 @@ const LocationForm = ({
         <CoordinatesInput
           name='location'
           label={translations.markerForm.location}
-          initialValue={locationData && locationToString()}
+          initialValue={locationData && locationToString(locationData.location)}
           onChange={value => {
             updateCurrentMarker(value)
           }}
