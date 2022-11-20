@@ -12,7 +12,7 @@ export default {
     backToResults: 'Powrót do wyników',
     locationInfo: {
       description: 'Opis',
-      directions: 'Usytuowanie i wskazówki dojścia',
+      directions: 'Miejsce położenia apteczki',
       fire: {
         label: 'Dostęp do ognia',
         true: 'Jest możliwość rozpalenia ognia',
@@ -185,7 +185,7 @@ export default {
     backToResults: 'Back to results',
     locationInfo: {
       description: 'Description',
-      directions: 'How to reach the place',
+      directions: 'Location of the first aid',
       fire: {
         label: 'Fire',
         true: 'There is access to fire',

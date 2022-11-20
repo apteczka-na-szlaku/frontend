@@ -4,7 +4,6 @@ import {
   Chip,
   Grid,
   Typography,
-  Divider,
 } from '@material-ui/core'
 import { formatDate, roundLatLng } from '../utils/helpers'
 
@@ -79,32 +78,6 @@ const LocationInfo = ({
             </Typography>
           </>
         }
-
-        <Divider />
-
-        <div className={classes.paddedText}>
-
-          <Typography variant='body2' gutterBottom>
-            {translations.locationInfo.water.label}:{' '}
-            {selectedLocation.water_exists === null
-              ? translations.noData
-              : !selectedLocation.water_exists
-                ? translations.unavailable
-                : selectedLocation.water_comment || translations.available
-            }
-          </Typography>
-
-          <Typography variant='body2'>
-            {translations.locationInfo.fire.label}:{' '}
-            {selectedLocation.fire_exists === null
-              ? translations.noData
-              : !selectedLocation.fire_exists
-                ? translations.unavailable
-                : selectedLocation.fire_comment || translations.available
-            }
-          </Typography>
-
-        </div>
 
       </div>
 

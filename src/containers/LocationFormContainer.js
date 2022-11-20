@@ -67,18 +67,6 @@ const LocationFormContainer = ({
     }
   }, [isNew])
 
-  // Convert Select option to bool. undefined = null, 1 = true, 2 = false.
-  const mapOptionToBool = value => {
-    switch (value) {
-      case 1:
-        return true
-      case 2:
-        return false
-      default:
-        return null
-    }
-  }
-
   const onSubmitLocation = async fields => {
     /* eslint-disable camelcase */
     const {
@@ -87,10 +75,6 @@ const LocationFormContainer = ({
       directions,
       type,
       location,
-      water_exists,
-      water_comment,
-      fire_exists,
-      fire_comment,
       is_disabled,
       unpublished,
     } = fields
@@ -103,10 +87,6 @@ const LocationFormContainer = ({
         directions,
         location: { lat, lon },
         type,
-        water_exists: mapOptionToBool(water_exists),
-        water_comment: water_exists && water_comment ? water_comment : null,
-        fire_exists: mapOptionToBool(fire_exists),
-        fire_comment: fire_exists && fire_comment ? fire_comment : null,
         is_disabled: is_disabled || false,
         unpublished: unpublished || false,
       }

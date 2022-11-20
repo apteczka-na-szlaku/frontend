@@ -25,25 +25,11 @@ const LocationForm = ({
   isNew,
 }) => {
   const [loading, setLoading] = React.useState()
-  const [hasWater, setHasWater] = React.useState()
-  const [hasFire, setHasFire] = React.useState()
   const { translations } = useLanguage()
 
   const locationToString = () => {
     const { lat, lng } = locationData.location
     return [lat, lng].toString().replace(',', ', ')
-  }
-
-  // Convert bool to Select option. null = null, true = 1, false = 2.
-  const mapBoolToOptions = value => {
-    switch (value) {
-      case true:
-        return 1
-      case false:
-        return 2
-      default:
-        return null
-    }
   }
 
   return <>
@@ -57,10 +43,6 @@ const LocationForm = ({
         'directions',
         'type',
         'location',
-        'water_exists',
-        'water_comment',
-        'fire_exists',
-        'fire_comment',
         'is_disabled',
         'unpublished',
       ]}
@@ -71,10 +53,6 @@ const LocationForm = ({
         'type',
         'location',
       ]}
-      onChange={fields => {
-        setHasWater(fields.water_exists === 1)
-        setHasFire(fields.fire_exists === 1)
-      }}
     >
 
       <HintWrapper message={translations.markerForm.placeHint}>
@@ -131,52 +109,6 @@ const LocationForm = ({
           initialValue={locationData?.type}
         />
       </HintWrapper>
-
-      <Select
-        name='water_exists'
-        label={translations.locationInfo.water.label}
-        initialValue={locationData && mapBoolToOptions(locationData.water_exists)}
-        placeholder={translations.noData}
-        options={[
-          { label: translations.locationInfo.water.true, value: 1 },
-          { label: translations.locationInfo.water.false, value: 2 },
-        ]}
-      />
-
-      {hasWater &&
-        <HintWrapper message={translations.markerForm.waterDescriptionHint}>
-          <Input
-            name='water_comment'
-            label={translations.markerForm.waterDescription}
-            min={40}
-            initialValue={locationData?.water_comment}
-            multiline
-          />
-        </HintWrapper>
-      }
-
-      <Select
-        name='fire_exists'
-        label={translations.locationInfo.fire.label}
-        initialValue={locationData && mapBoolToOptions(locationData.fire_exists)}
-        placeholder={translations.noData}
-        options={[
-          { label: translations.locationInfo.fire.true, value: 1 },
-          { label: translations.locationInfo.fire.false, value: 2 },
-        ]}
-      />
-
-      {hasFire &&
-        <HintWrapper message={translations.markerForm.fireDescriptionHint}>
-          <Input
-            name='fire_comment'
-            label={translations.markerForm.fireDescription}
-            min={40}
-            initialValue={locationData?.fire_comment}
-            multiline
-          />
-        </HintWrapper>
-      }
 
       <Checkbox
         name='is_disabled'
