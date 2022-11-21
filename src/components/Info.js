@@ -2,7 +2,6 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Button, Typography } from '@material-ui/core'
 import Modal from './Modal'
-import Version from './Version'
 import history from '../history'
 
 const Info = () => {
@@ -24,7 +23,7 @@ const Info = () => {
               className={classes.logo}
             />
             <Typography gutterBottom variant='body1'>
-              Witaj w aplikacji grupy facebookowej <br/><a href='https://www.facebook.com/groups/938290029559772' target='_blank'>Wiating czyli chatki w górach</a>!
+              Aplikacja inicjatywy <a href='https://apteczkanaszlaku.eu//' target='_blank'>Apteczka Na Szlaku</a>
             </Typography>
             <Button
               variant='contained'
@@ -33,7 +32,6 @@ const Info = () => {
               onClick={handleClose}
               size='large'
             >Przejdź do mapy</Button>
-            <div className={classes.version}><Version /></div>
           </div>
         </div>
         <div className={classes.footer}>
@@ -42,27 +40,11 @@ const Info = () => {
             <a href='https://github.com/firflant' target='_blank' >Michał Kokociński</a>, <a href='https://github.com/merito' target='_blank' >Dawid Wolski</a></Typography>
           <div>
             <Typography className={classes.footerRight} variant='body2' component='div'>
-              Administracja:
+              Administracja:<br />
               <div style={{ marginLeft: 4 }}>
-                Dariusz Hajduk (<a href='mailto:wiating@wiating.eu'>wiating@wiating.eu</a>)
+                Daniel Wojnar (<a href='mailto:apteczkanaszlaku@gmail.com'>apteczkanaszlaku@gmail.com</a>)
               </div>
             </Typography>
-            <div className={classes.partner}>
-              <Typography className={classes.footerRight} variant='body2' component='div'>
-                Opiekun prawny:
-                <div style={{ marginLeft: 4 }}>
-                  Weronika Bednarska
-                  <a href='https://soinlaw.com' target='_blank'>
-                    <img
-                      src='/soinlaw.png'
-                      alt='SO IN LAW'
-                      title='SO IN LAW'
-                      className={classes.partnerLogo}
-                    />
-                  </a>
-                </div>
-              </Typography>
-            </div>
           </div>
         </div>
       </div>
@@ -110,7 +92,6 @@ const useStyles = makeStyles(theme => ({
   footerRight: {
     [theme.breakpoints.up('sm')]: {
       textAlign: 'right',
-      display: 'flex',
     },
   },
   partner: {
@@ -127,9 +108,6 @@ const useStyles = makeStyles(theme => ({
   button: {
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
-  },
-  version: {
-    margin: '0 auto 18px',
   },
 }))
 

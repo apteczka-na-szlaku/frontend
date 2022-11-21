@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, Avatar, Hidden } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Avatar } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { ArrowDropDown, Menu } from '@material-ui/icons'
 import Form from '@react-form-component/mui'
@@ -9,7 +9,6 @@ import Dropdown from './Dropdown'
 import Logo from './Logo'
 import SearchInput from './SearchInput'
 import Loader from './Loader'
-import Version from './Version'
 import useLanguage from '../utils/useLanguage'
 import { isDrawerOpenState } from '../state'
 
@@ -48,9 +47,7 @@ const NavBar = ({
             loading={searchLoading}
           />
         </Form>
-        <div className={classes.version}>
-          <Hidden smDown><Version /></Hidden>
-        </div>
+        <div className={classes.spacer} />
         {!authLoading && !isLoggedIn &&
           <Dropdown
             items={languages.map(lang => ({
@@ -113,7 +110,7 @@ const useStyles = makeStyles(theme => ({
       display: 'none',
     },
   },
-  version: {
+  spacer: {
     flexGrow: 1,
     marginLeft: theme.spacing(1),
     lineHeight: 'normal',
