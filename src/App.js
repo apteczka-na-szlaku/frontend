@@ -94,7 +94,6 @@ const App = ({ history, location: { pathname } }) => {
         <Route exact path='/legend' component={LegendPage} />
         <Route exact path='/regulations' component={Regulamin} />
         <Route exact path='/privacy-policy' component={PolitykaPrywatnosci} />
-        <Route exact path='/faq' component={FaqPage} />
       </Switch>
 
       <Route path='/history' component={HistoryContainer} />

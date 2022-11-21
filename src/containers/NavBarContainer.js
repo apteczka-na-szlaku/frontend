@@ -101,7 +101,6 @@ const NavBarContainer = () => {
     ...isMobile ? [{ label: translations.legend, url: '/legend' }] : [],
     { label: translations.termsAndConditions, url: '/regulations' },
     { label: translations.privacyPolicy, url: '/privacy-policy' },
-    { label: translations.faq, url: '/faq', divider: true },
     {
       label: translations.auth[isLoggedIn ? 'logout' : 'login'],
       callback: () => isLoggedIn ? logout() : loginWithRedirect({}),
