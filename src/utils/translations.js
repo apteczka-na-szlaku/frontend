@@ -8,7 +8,7 @@ export default {
     save: 'Zapisz',
     cancel: 'Anuluj',
     loading: 'Ładowanie',
-    search: 'Szukaj',
+    search: 'Szukaj apteczki',
     backToResults: 'Powrót do wyników',
     locationInfo: {
       description: 'Opis',

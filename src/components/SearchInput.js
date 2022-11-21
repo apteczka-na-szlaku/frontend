@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   icon: {
-    color: 'white',
+    color: theme.palette.grey[500],
     height: '100%',
     display: 'flex',
     alignItems: 'center',

@@ -32,7 +32,7 @@ const NavBar = ({
     <AppBar position='relative' color='transparent' className={classNames(classes.root, {
       [classes.hideOnMobile]: isDrawerOpen,
     })}>
-      <Toolbar className={classes.logo}>
+      <Toolbar>
         <Logo className={classes.logo} />
         <Form
           fields={['phrase']}
