@@ -30,7 +30,7 @@ export default {
     },
     locationType: {
       firstAidKit: 'Apteczka Na Szlaku',
-      aed: 'AED',
+      aed: 'AED Na Szlaku',
       goprAllyear: 'GOPR Całoroczny',
       goprSeasonal: 'GOPR Sezonowy',
       topr: 'TOPR',
