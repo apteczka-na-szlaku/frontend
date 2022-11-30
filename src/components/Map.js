@@ -66,8 +66,6 @@ const Map = ({
         ? 36
         : 40
 
-        console.log('markerSize: ', markerSize);
-        console.log('currentZoom: ', currentZoom);
   React.useEffect(() => {
     if (activeLocation?.location && !contextMenu && initiated && !isMobile) {
       const newZoom = currentZoom < 10 ? 11 : undefined
